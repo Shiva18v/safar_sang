@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Safar Sang | Travel & Tour Packages</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            background: #f8f9fa;
+            color: #222;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.82);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .navbar-brand span {
+            color: #ffc107;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            margin: 0 7px;
+        }
+
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+        .navbar-toggler {
+            border-color: white;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 90vh;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.40),
+                    rgba(0,0,0,0.70)
+                ),
+                url("images/newbg.jpg")
+                center / cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(45px, 7vw, 80px);
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: #ffc107;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+            margin: 25px 0;
+        }
+
+        .hero .btn {
+            border-radius: 30px;
+            padding: 13px 28px;
+            margin: 5px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            max-width: 700px;
+            margin: 0 auto 45px;
+            text-align: center;
+            color: #777;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+
+            background: #fff3cd;
+            color: #d39e00;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: auto auto 20px;
+
+            font-size: 30px;
+        }
+
+        .feature-box h5 {
+            font-weight: 700;
+        }
+
+        .feature-box p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           PACKAGE CARDS
+        ========================= */
+
+        .package-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            border: none;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.10);
+
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 45px rgba(0,0,0,0.18);
+        }
+
+        .package-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .package-body {
+            padding: 25px;
+        }
+
+        .package-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .package-info {
+            color: #777;
+            margin: 12px 0;
+        }
+
+        .price {
+            color: #198754;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .package-body .btn {
+            border-radius: 25px;
+            margin-right: 5px;
+        }
+
+
+        /* =========================
+           BOOKING
+        ========================= */
+
+        .booking-section {
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.75),
+                    rgba(0,0,0,0.75)
+                ),
+                url("images/newbg.jpg")
+                center / cover fixed;
+
+        }
+
+        .booking-box {
+            max-width: 850px;
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.30);
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+
+        .form-control,
+        .form-select {
+            padding: 13px;
+            border-radius: 10px;
+        }
+
+        .submit-btn {
+            border-radius: 30px;
+            padding: 14px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           TEAM
+        ========================= */
+
+        .team-card {
+            text-align: center;
+            background: white;
+            padding: 30px 20px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.08);
+
+            height: 100%;
+        }
+
+        .team-card img {
+            width: 130px;
+            height: 130px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #ffc107;
+
+            margin-bottom: 18px;
+        }
+
+        .team-card h5 {
+            font-weight: 700;
+        }
+
+        .team-card p {
+            color: #777;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 50px 0 25px;
+        }
+
+        footer h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        footer h3 span {
+            color: #ffc107;
+        }
+
+        footer p {
+            color: #ccc;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:768px) {
+
+            .hero {
+                min-height: 85vh;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 35px;
+            }
+
+            .booking-box {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+
+            <img
+                src="images/safar sang logo.png"
+                class="logo-img me-2"
+                alt="Safar Sang">
+
+            सफर <span>Sang</span>
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#packages">
+                        Packages
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#booking">
+                        Booking
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">
+                        Team
+                    </a>
+                   </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="#terms">
+                        Terms & Conditions
+            </a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Explore India With
+            <span>सफर Sang</span>
+        </h1>
+
+        <p>
+            Discover beautiful destinations,
+            spiritual journeys and unforgettable
+            adventures with us.
+        </p>
+
+        <a
+            href="#packages"
+            class="btn btn-warning">
+
+            <i class="bi bi-compass"></i>
+
+            Explore Packages
+
+        </a>
+
+
+        <a
+            href="#booking"
+            class="btn btn-outline-light">
+
+            <i class="bi bi-calendar-check"></i>
+
+            Book Your Trip
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Why Choose Safar Sang?
+        </h2>
+
+        <p class="section-subtitle">
+            We make your journey comfortable,
+            memorable and hassle-free.
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+
+                    <h5>
+                        Beautiful Destinations
+                    </h5>
+
+                    <p>
+                        Explore scenic mountains,
+                        spiritual cities and hidden
+                        gems across India.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <h5>
+                        Safe & Comfortable
+                    </h5>
+
+                    <p>
+                        Safe travel, comfortable
+                        stays and reliable support.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-heart-fill"></i>
+                    </div>
+
+                    <h5>
+                        Memorable Experiences
+                    </h5>
+
+                    <p>
+                        Create beautiful memories
+                        with every journey.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PACKAGES
+===================================================== -->
+
+<section id="packages" class="section bg-light">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Our Travel Packages
+        </h2>
+
+        <p class="section-subtitle">
+            Choose your destination and
+            book your next adventure.
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <!-- BAROT -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="package-card">
+
+                    <img
+                        src="images/barot valley.webp"
+                        class="package-image"
+                        alt="Barot Valley">
+
+                    <div class="package-body">
+
+                        <h3 class="package-title">
+                            Barot Valley Trip
+                        </h3>
+
+                        <div class="package-info">
+                            <i class="bi bi-clock"></i>
+                            3 Days / 2 Nights
+                        </div>
+
+                        <p>
+                            Experience the peaceful
+                            beauty of Barot Valley.
+                        </p>
+
+                        <div class="price mb-3">
+                            ₹7,999
+                        </div>
+
+
+                        <a
+                            href="barot-itinerary.html"
+                            target="_blank"
+                            class="btn btn-outline-success">
+
+                            <i class="bi bi-map"></i>
+                            Itinerary
+
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-success"
+                            onclick="selectPackage('Barot Valley Trip')">
+
+                            Book Now
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- JISPA -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="package-card">
+
+                    <img
+                        src="images/jispa.jpg"
+                        class="package-image"
+                        alt="Jispa">
+
+                    <div class="package-body">
+
+                        <h3 class="package-title">
+                            Jispa River View
+                        </h3>
+
+                        <div class="package-info">
+                            <i class="bi bi-clock"></i>
+                            4 Days / 3 Nights
+                        </div>
+
+                        <p>
+                            Enjoy breathtaking
+                            Himalayan river views.
+                        </p>
+
+                        <div class="price mb-3">
+                            ₹9,999
+                        </div>
+
+
+                        <a
+                            href="jispa-itinerary.html"
+                            target="_blank"
+                            class="btn btn-outline-success">
+
+                            <i class="bi bi-map"></i>
+                            Itinerary
+
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-success"
+                            onclick="selectPackage('Jispa River View')">
+
+                            Book Now
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- UJJAIN -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="package-card">
+
+                    <img
+                        src="images/ujjian.jpg"
+                        class="package-image"
+                        alt="Ujjain">
+
+                    <div class="package-body">
+
+                        <h3 class="package-title">
+                            Ujjain Jyotirlinga Trip
+                        </h3>
+
+                        <div class="package-info">
+                            <i class="bi bi-clock"></i>
+                            2 Days / 1 Night
+                        </div>
+
+                        <p>
+                            Experience spirituality
+                            and the sacred city of Ujjain.
+                        </p>
+
+                        <div class="price mb-3">
+                            ₹5,499
+                        </div>
+
+
+                        <a
+                            href="ujjain-itinerary.html"
+                            target="_blank"
+                            class="btn btn-outline-success">
+
+                            <i class="bi bi-map"></i>
+                            Itinerary
+
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-success"
+                            onclick="selectPackage('Ujjain Jyotirlinga Trip')">
+
+                            Book Now
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section id="booking" class="section booking-section">
+
+    <div class="container">
+
+        <h2 class="section-title text-white">
+            Book Your Trip
+        </h2>
+
+        <p class="section-subtitle text-white">
+            Fill the form and send your booking
+            directly to our WhatsApp.
+        </p>
+
+
+        <div class="booking-box">
+
+            <form id="bookingForm">
+
+
+                <!-- NAME -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <!-- CUSTOMER WHATSAPP -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Your WhatsApp Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        name="whatsapp"
+                        class="form-control"
+                        placeholder="Enter your WhatsApp number"
+                        required>
+
+                </div>
+
+
+                <!-- PACKAGE -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Select Package
+                    </label>
+
+                    <select
+                        id="destination"
+                        name="destination"
+                        class="form-select"
+                        required>
+
+                        <option value="">
+                            Select Package
+                        </option>
+
+                        <option value="Barot Valley Trip">
+                            Barot Valley Trip - ₹7,999
+                        </option>
+
+                        <option value="Jispa River View">
+                            Jispa River View - ₹9,999
+                        </option>
+
+                        <option value="Ujjain Jyotirlinga Trip">
+                            Ujjain Jyotirlinga Trip - ₹5,499
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATE -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Travel Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="travelDate"
+                        name="date"
+                        class="form-control"
+                        required>
+
+                </div>
+
+
+                <!-- TRAVELERS -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Number of Travelers
+                    </label>
+
+                    <input
+                        type="number"
+                        id="travelers"
+                        name="travelers"
+                        class="form-control"
+                        value="1"
+                        min="1"
+                        required>
+
+                </div>
+
+
+                <!-- NOTES -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Special Requests / Notes
+                    </label>
+
+                    <textarea
+                        name="notes"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Any special request?"></textarea>
+
+                </div>
+
+
+                <!-- TOTAL -->
+
+                <div class="alert alert-success text-center">
+
+                    <strong>
+                        Estimated Total:
+                    </strong>
+
+                    <span id="totalAmount">
+                        ₹0
+                    </span>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="btn btn-success w-100 submit-btn">
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    Submit Booking on WhatsApp
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section id="gallery" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Trip Gallery
+        </h2>
+
+        <p class="section-subtitle">
+            Explore some beautiful moments
+            from our trips.
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/pic1.jpeg"
+                        alt="Trip 1">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/pic2.jpeg"
+                        alt="Trip 2">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/pic3.jpeg"
+                        alt="Trip 3">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/WhatsApp Image 2026-08-08 at 10.11.11 PM.jpeg"
+                        alt="Trip 4">
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TEAM
+===================================================== -->
+
+<section id="team" class="section bg-light">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Meet Our Team
+        </h2>
+
+
+        <p class="section-subtitle">
+            The people behind your memorable journeys.
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="team-card">
+
+                    <img
+                        src="images/nitin pic.jpeg"
+                        alt="Team Member">
+
+                    <h5>
+                        Nitin Chauhan
+                    </h5>
+
+                    <p>
+                        Trip Coordinator
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="team-card">
+
+                    <img
+                        src="images/ritush pic  .jpeg"
+                        alt="Team Member">
+
+                    <h5>
+                        Ritush Chauhan
+                    </h5>
+
+                    <p>
+                        Trip Planner
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="team-card">
+
+                    <img
+                        src="images/WhatsApp Image 2026-08-08 at 10.11.11 PM.jpeg"
+                        alt="Team Member">
+
+                    <h5>
+                        Yuvraj Chauhan
+                    </h5>
+
+                    <p>
+                        Owner
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="team-card">
+
+                    <img
+                        src="images/WhatsApp Image 2026-08-08 at 10.11.11 PM.jpeg"
+                        alt="Team Member">
+
+                    <h5>
+                        Nikhil Chauhan
+                    </h5>
+
+                    <p>
+                        Customer Support
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     TERMS & CONDITIONS
+========================= -->
+
+<section id="terms" class="section bg-light">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Terms & Conditions
+        </h2>
+
+        <p class="section-subtitle">
+            Please read our Terms & Conditions carefully
+            before booking your trip with Safar Sang.
+        </p>
+
+
+        <div class="row g-4">
+
+            <!-- 1. Booking -->
+            <div class="col-md-6">
+
+                <div class="package-card p-4">
+
+                    <h4>
+                        <i class="bi bi-check-circle-fill text-success"></i>
+                        Booking & Confirmation
+                    </h4>
+
+                    <p>
+                        All booking requests submitted through
+                        the Safar Sang website are subject to
+                        availability and confirmation by our team.
+                    </p>
+
+                    <p>
+                        Your booking will be considered confirmed
+                        only after confirmation from the Safar Sang team.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2. Travel Date -->
+            <div class="col-md-6">
+
+                <div class="package-card p-4">
+
+                    <h4>
+                        <i class="bi bi-calendar-check-fill text-primary"></i>
+                        Travel Date
+                    </h4>
+
+                    <p>
+                        Customers must provide the correct travel
+                        date while submitting the booking request.
+                    </p>
+
+                    <p>
+                        Any change in travel date will depend on
+                        availability and confirmation from our team.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3. Travelers -->
+            <div class="col-md-6">
+
+                <div class="package-card p-4">
+
+                    <h4>
+                        <i class="bi bi-people-fill text-warning"></i>
+                        Number of Travelers
+                    </h4>
+
+                    <p>
+                        Customers must provide the correct number
+                        of travelers during booking.
+                    </p>
+
+                    <p>
+                        Additional travelers may result in
+                        additional charges.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4. Cancellation -->
+            <div class="col-md-6">
+
+                <div class="package-card p-4">
+
+                    <h4>
+                        <i class="bi bi-x-circle-fill text-danger"></i>
+                        Cancellation & Changes
+                    </h4>
+
+                    <p>
+                        Cancellation or modification requests
+                        should be communicated to the Safar Sang
+                        team as early as possible.
+                    </p>
+
+                    <p>
+                        Applicable cancellation charges will
+                        depend on the selected package.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5. Package Price -->
+            <div class="col-md-6">
+
+                <div class="package-card p-4">
+
+                    <h4>
+                        <i class="bi bi-cash-coin text-success"></i>
+                        Package Price
+                    </h4>
+
+                    <p>
+                        Prices displayed on the website are
+                        estimated package prices.
+                    </p>
+
+                    <p>
+                        The final price will be communicated
+                        by the Safar Sang team before confirmation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 6. Customer Responsibility -->
+            <div class="col-md-6">
+
+                <div class="package-card p-4">
+
+                    <h4>
+                        <i class="bi bi-person-check-fill text-primary"></i>
+                        Customer Responsibility
+                    </h4>
+
+                    <p>
+                        Customers are responsible for providing
+                        accurate personal and contact information.
+                    </p>
+
+                    <p>
+                        Customers should carry all necessary
+                        identification and travel documents.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 7. Weather -->
+            <div class="col-md-6">
+
+                <div class="package-card p-4">
+
+                    <h4>
+                        <i class="bi bi-cloud-sun-fill text-warning"></i>
+                        Weather & Unforeseen Situations
+                    </h4>
+
+                    <p>
+                        Travel plans may be affected by weather,
+                        road conditions, government restrictions
+                        or other unforeseen circumstances.
+                    </p>
+
+                    <p>
+                        Safar Sang may modify the itinerary when
+                        necessary for traveler safety.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 8. Support -->
+            <div class="col-md-6">
+
+                <div class="package-card p-4">
+
+                    <h4>
+                        <i class="bi bi-headset text-success"></i>
+                        Contact & Support
+                    </h4>
+
+                    <p>
+                        For booking-related questions, changes
+                        or assistance, customers can contact
+                        the Safar Sang support team.
+                    </p>
+
+                    <p>
+                        Our team will assist you with your
+                        travel requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- IMPORTANT NOTE -->
+
+        <div class="alert alert-warning mt-5 text-center">
+
+            <i class="bi bi-exclamation-triangle-fill"></i>
+
+            <strong>Important:</strong>
+
+            By submitting a booking request, you acknowledge
+            that you have read and understood the
+            Terms & Conditions of Safar Sang.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="contact">
+
+    <div class="container text-center">
+
+        <h3>
+            Safar <span>Sang</span>
+        </h3>
+
+        <p>
+            Explore. Experience. Explain.
+        </p>
+
+        <p>
+            <i class="bi bi-envelope"></i>
+            support@safarsang.com
+        </p>
+
+        <p>
+            <i class="bi bi-whatsapp"></i>
+            Contact us on WhatsApp
+        </p>
+
+        <hr>
+
+        <p>
+            © 2026 Safar Sang. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<!-- =====================================================
+     CUSTOM JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+    /* ==================================================
+       PACKAGE PRICES
+    ================================================== */
+
+    const packagePrices = {
+
+        "Barot Valley Trip": 7999,
+
+        "Jispa River View": 9999,
+
+        "Ujjain Jyotirlinga Trip": 5499
+
+    };
+
+
+
+    /* ==================================================
+       🔴 CHANGE ONLY THIS NUMBER
+       
+       FORMAT:
+       91 + 10 digit Indian WhatsApp number
+
+       Example:
+       919876543210
+
+       DO NOT USE:
+       +91
+       spaces
+       -
+    ================================================== */
+
+    const adminWhatsApp = "919560111627";
+
+
+
+    /* ==================================================
+       BOOK NOW FUNCTION
+    ================================================== */
+
+    function selectPackage(packageName) {
+
+        const destination =
+            document.getElementById("destination");
+
+        const booking =
+            document.getElementById("booking");
+
+
+        if (!destination || !booking) {
+
+            console.error(
+                "Booking section or package dropdown not found."
+            );
+
+            return;
+
+        }
+
+
+        destination.value = packageName;
+
+
+        calculateTotal();
+
+
+        booking.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+
+
+    /* ==================================================
+       CALCULATE TOTAL
+    ================================================== */
+
+    function calculateTotal() {
+
+        const destination =
+            document.getElementById("destination");
+
+        const travelersInput =
+            document.getElementById("travelers");
+
+        const totalAmount =
+            document.getElementById("totalAmount");
+
+
+        if (
+            !destination ||
+            !travelersInput ||
+            !totalAmount
+        ) {
+
+            return;
+
+        }
+
+
+        const packageName =
+            destination.value;
+
+
+        const travelers =
+            parseInt(
+                travelersInput.value
+            ) || 1;
+
+
+        const price =
+            packagePrices[packageName] || 0;
+
+
+        const total =
+            price * travelers;
+
+
+        totalAmount.innerText =
+            "₹" +
+            total.toLocaleString("en-IN");
+
+    }
+
+
+
+    /* ==================================================
+       PACKAGE CHANGE
+    ================================================== */
+
+    document
+        .getElementById("destination")
+        .addEventListener(
+            "change",
+            calculateTotal
+        );
+
+
+
+    /* ==================================================
+       TRAVELERS CHANGE
+    ================================================== */
+
+    document
+        .getElementById("travelers")
+        .addEventListener(
+            "input",
+            calculateTotal
+        );
+
+
+
+    /* ==================================================
+       MINIMUM TRAVEL DATE
+    ================================================== */
+
+    const today =
+        new Date()
+            .toISOString()
+            .split("T")[0];
+
+
+    document
+        .getElementById("travelDate")
+        .min = today;
+
+
+
+    /* ==================================================
+       INITIAL TOTAL
+    ================================================== */
+
+    calculateTotal();
+
+
+
+    /* ==================================================
+       BOOKING FORM
+    ================================================== */
+
+    document
+        .getElementById("bookingForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                
+                const submitButton =
+                event.target.querySelector(
+                    'button[type="submit"]'
+                );
+
+            submitButton.disabled = true;
+
+            submitButton.innerText =
+                "Opening WhatsApp...";
+
+
+                /* ---------------------------------------
+                   CHECK ADMIN WHATSAPP NUMBER
+                --------------------------------------- */
+
+                if (
+                    !/^91\d{10}$/.test(
+                        adminWhatsApp
+                    )
+                ) {
+
+                    alert(
+                        "ERROR: Please enter your WhatsApp number in the code.\n\n" +
+                        "Format example:\n" +
+                        "919876543210"
+                    );
+
+                    return;
+
+                }
+
+
+
+                /* ---------------------------------------
+                   GET FORM VALUES
+                --------------------------------------- */
+
+                const name =
+                    document
+                        .querySelector(
+                            '[name="name"]'
+                        )
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .querySelector(
+                            '[name="email"]'
+                        )
+                        .value
+                        .trim();
+
+
+                const customerWhatsApp =
+                    document
+                        .querySelector(
+                            '[name="whatsapp"]'
+                        )
+                        .value
+                        .trim();
+
+
+                const destination =
+                    document
+                        .getElementById(
+                            "destination"
+                        )
+                        .value;
+
+
+                const date =
+                    document
+                        .getElementById(
+                            "travelDate"
+                        )
+                        .value;
+
+
+                const travelers =
+                    document
+                        .getElementById(
+                            "travelers"
+                        )
+                        .value;
+
+
+                const notes =
+                    document
+                        .querySelector(
+                            '[name="notes"]'
+                        )
+                        .value
+                        .trim();
+
+
+                const total =
+                    document
+                        .getElementById(
+                            "totalAmount"
+                        )
+                        .innerText;
+
+
+
+                /* ---------------------------------------
+                   CHECK PACKAGE
+                --------------------------------------- */
+
+                if (!destination) {
+
+                    alert(
+                        "Please select a travel package."
+                    );
+
+                    return;
+
+                }
+
+
+
+                /* ---------------------------------------
+                   CREATE MESSAGE
+                --------------------------------------- */
+// WhatsApp-safe emojis
+const E = {
+    star: "\u2B50",
+    plane: "\u2708\uFE0F",
+    foldedHands: "\uD83D\uDE4F",
+    person: "\uD83D\uDC64",
+    mountain: "\u26F0\uFE0F",
+    calendar: "\uD83D\uDCC5",
+    people: "\uD83D\uDC65",
+    money: "\uD83D\uDCB0",
+    memo: "\uD83D\uDCDD",
+    sparkles: "\u2728",
+    globe: "\uD83C\uDF0D",
+    heart: "\u2764\uFE0F"
+};
+
+
+const message =
+    E.star + "━━━━━━━━━━━━━━━━━━━━" + E.star + "\n" +
+    "          SAFAR SANG\n" +
+    "       " + E.plane + " TRAVEL & TOURS\n" +
+    E.star + "━━━━━━━━━━━━━━━━━━━━" + E.star + "\n\n" +
+
+    E.foldedHands +
+    " Thank you for viewing our travel services!\n\n" +
+
+    "We are happy to receive your booking request.\n" +
+    "Here are the details of your trip:\n\n" +
+
+    E.person + " CUSTOMER DETAILS\n" +
+    "━━━━━━━━━━━━━━━━━━━━\n" +
+    "Name       : " + name + "\n" +
+    "Email      : " + email + "\n" +
+    "WhatsApp   : " + customerWhatsApp + "\n\n" +
+
+    E.mountain + " TRIP DETAILS\n" +
+    "━━━━━━━━━━━━━━━━━━━━\n" +
+    "Destination : " + destination + "\n" +
+    E.calendar + " Travel Date : " + date + "\n" +
+    E.people + " Travelers   : " + travelers + "\n" +
+    E.money + " Estimated Amount : " + total + "\n\n" +
+
+    E.memo + " SPECIAL REQUEST\n" +
+    "━━━━━━━━━━━━━━━━━━━━\n" +
+    (notes || "None") + "\n\n" +
+
+    E.sparkles +
+    " We have received your travel request successfully.\n\n" +
+
+    "Our team will connect with you shortly to discuss\n" +
+    "your booking details and assist you with your journey.\n\n" +
+
+    E.globe +
+    " Explore More. Travel More. Create Memories.\n\n" +
+
+    "Thank you for choosing\n" +
+    E.heart + " SAFAR SANG " + E.heart + "\n\n" +
+
+    "Have a wonderful journey ahead! " +
+    E.sparkles + "\n\n" +
+
+    "━━━━━━━━━━━━━━━━━━━━\n" +
+    "       SAFAR SANG\n" +
+    "     Your Journey, Our Care\n" +
+    "━━━━━━━━━━━━━━━━━━━━";
+               /* ---------------------------------------
+                   WHATSAPP URL
+                --------------------------------------- */
+
+                const whatsappURL =
+
+                    "https://wa.me/" +
+
+                    adminWhatsApp +
+
+                    "?text=" +
+
+                    encodeURIComponent(
+                        message
+                    );
+
+
+
+                /* ---------------------------------------
+                   OPEN WHATSAPP
+                --------------------------------------- */
+
+                window.open(
+                    whatsappURL,
+                    "_blank"
+                );
+
+            }
+        );
+
+
+
+    /* ==================================================
+       MOBILE NAVBAR CLOSE
+    ================================================== */
+
+    document
+        .querySelectorAll(".nav-link")
+        .forEach(
+            function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        const navbar =
+                            document.getElementById(
+                                "navbarNav"
+                            );
+
+
+                        if (
+                            navbar &&
+                            navbar.classList.contains(
+                                "show"
+                            )
+                        ) {
+
+                            const collapse =
+                                bootstrap.Collapse
+                                    .getInstance(
+                                        navbar
+                                    );
+
+
+                            if (collapse) {
+
+                                collapse.hide();
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+</script>
+
+
+</body>
+
+</html>
